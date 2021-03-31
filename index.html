@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="style.css" media="screen" charset="utf-8">
 </head>
 
-<body>
+<body class="body">
   <header>
     <div class="header">
       <img class="header__image" src="./eisenhower-matrix.jpg" alt="eisenhower-matrix">
@@ -22,10 +22,10 @@
         <button class="add__button">Add</button>
       </div>
     </section>
-    <section class="to-do">
-      <h3>Todo</h3>
+    <section class="todo">
+      <h3 class="todo_name">Todo</h3>
       <ul id="incomplete-tasks">
-        <li>
+        <li class="incomplete-tasks__point">
           <input type="checkbox">
           <label class="incomplete-tasks__message task">Pay Bills</label>
           <input class="incomplete-tasks__new-massage task" type="text">
@@ -34,7 +34,7 @@
             <img class="delete__image" src="./remove.svg" alt="remove-button">
           </button>
         </li>
-        <li class="incomplete-tasks edit-mode">
+        <li class="incomplete-tasks__point-edit-mode">
           <input type="checkbox">
           <label class="incomplete-tasks__message task">Go Shopping</label>
           <input class="incomplete-tasks__new-massage task" type="text" value="go Shopping">
@@ -46,9 +46,9 @@
       </ul>
     </section>
     <section class="completed">
-      <h3>Completed</h3>
+      <h3 class="completed_name">Completed</h3>
       <ul class="completed-tasks" id="completed-tasks">
-        <li>
+        <li class="completed-tasks__point">
           <input type="checkbox" checked>
           <label class="complete-tasks__message task">See the Doctor</label>
           <input class="complete-tasks__new-massage task" type="text">
