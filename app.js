@@ -10,7 +10,7 @@
 
 var taskInput=document.getElementById("new-task");//Add a new task.
 var addButton=document.getElementsByTagName("button")[0];//first button
-var incompleteTaskHolder=document.getElementById("incompleteTasks");//ul of #incompleteTasks
+var incompleteTaskHolder=document.getElementById("incomplete-tasks");//ul of #incompleteTasks
 var completedTasksHolder=document.getElementById("completed-tasks");//completed-tasks
 
 
@@ -18,11 +18,12 @@ var completedTasksHolder=document.getElementById("completed-tasks");//completed-
 var createNewTaskElement=function(taskString){
 
     var listItem=document.createElement("li");
-
+    listItem.classList.add('incomplete-tasks__point')
     //input (checkbox)
     var checkBox=document.createElement("input");//checkbx
     //label
     var label=document.createElement("label");//label
+    
     //input (text)
     var editInput=document.createElement("input");//text
     //button.edit
@@ -33,8 +34,13 @@ var createNewTaskElement=function(taskString){
     var deleteButtonImg=document.createElement("img");//delete button image
 
     label.innerText=taskString;
-    label.className='task';
-
+    
+    label.className = 'incomplete-task__message';
+    label.classList.add('task');
+    label.style.width = '226px';
+    label.style.paddingLeft = '10px';
+    label.style.fontSize = '18px';
+    label.style.boxSizing = 'border-box';
     //Each elements, needs appending
     checkBox.type="checkbox";
     editInput.type="text";
@@ -45,6 +51,8 @@ var createNewTaskElement=function(taskString){
 
     deleteButton.className="delete";
     deleteButtonImg.src='./remove.svg';
+    deleteButtonImg.classList.add('delete__image')
+
     deleteButton.appendChild(deleteButtonImg);
 
 
@@ -70,7 +78,7 @@ var addTask=function(){
     bindTaskEvents(listItem, taskCompleted);
 
     taskInput.value="";
-
+    label.classList.add('incomplete-tasks__message');
 }
 
 //Edit an existing task.
